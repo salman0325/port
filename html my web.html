@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman Khan - DevOps Engineer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #a0a0a0;
+            opacity: 0; /* Initially hide the DevOps Engineer line */
+            animation: slideInBounce 2s forwards 1s; /* New animation */
+        }
+
+        /* New Animation */
+        @keyframes slideInBounce {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            60% {
+                transform: translateX(30px);
+            }
+            80% {
+                transform: translateX(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        /* About section */
+        #about {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4CAF50;
+        }
+
+        .section {
+            padding: 40px 20px;
+        }
+
+        /* Projects Section */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+        }
+
+        /* Skills Section */
+        #skills {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-card h4 {
+            margin-top: 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            text-align: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Salman Khan</h1>
+        <p>DevOps Engineer | Automating Infrastructure | Cloud Enthusiast</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about" class="section">
+        <img id="profile-pic" src="C:\Users\hp 840 G5\Desktop\WhatsApp Image 2024-11-17 at 21.34.51_f57b739d.jpg" alt="Salman Khan">
+        <h2>About Me</h2>
+        <p>Hi, I'm Salman Khan, a DevOps Engineer with a passion for building scalable, cloud-based solutions. I specialize in CI/CD automation, container orchestration, and cloud infrastructure management.</p>
+    </section>
+
+    <!-- Project Portfolio Section -->
+    <section id="portfolio" class="section">
+        <h2>Project Portfolio</h2>
+        <div class="projects">
+            <div class="project-card">
+                <h3>CI/CD Pipeline Setup</h3>
+                <p>Implemented CI/CD pipelines using Jenkins, Docker, and Kubernetes, automating the software delivery process and improving deployment efficiency.</p>
+            </div>
+            <div class="project-card">
+                <h3>Kubernetes and Docker</h3>
+                <p>Deployed and managed microservices in a Kubernetes environment with Docker containers, ensuring scalability and high availability.</p>
+            </div>
+            <div class="project-card">
+                <h3>Git/GitHub Workflow</h3>
+                <p>Set up GitHub repositories for version control and automated workflow processes using Git, ensuring streamlined collaboration and code management.</p>
+            </div>
+            <div class="project-card">
+                <h3>Prometheus and Grafana</h3>
+                <p>Integrated Prometheus for monitoring and Grafana for visualization, enabling real-time monitoring of system performance and health.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-card">
+                <h4>Git & GitHub</h4>
+                <p>Version control using Git and collaborative code sharing and management with GitHub, streamlining project workflows.</p>
+            </div>
+            <div class="skill-card">
+                <h4>Docker</h4>
+                <p>Containerization platform that enables developers to package and deploy applications consistently across different environments.</p>
+            </div>
+            <div class="skill-card">
+                <h4>Kubernetes</h4>
+                <p>Orchestrating containers with Kubernetes, ensuring high availability and scalability for large-scale applications.</p>
+            </div>
+            <div class="skill-card">
+                <h4>CI/CD with Jenkins</h4>
+                <p>Automated software builds, testing, and deployment pipelines using Jenkins, speeding up the software delivery cycle.</p>
+            </div>
+            <div class="skill-card">
+                <h4>Ansible</h4>
+                <p>Automation tool for configuration management, application deployment, and task automation across servers.</p>
+            </div>
+            <div class="skill-card">
+                <h4>AWS</h4>
+                <p>Cloud services including EC2, S3, Lambda, and RDS to build and scale applications in the cloud.</p>
+            </div>
+            <div class="skill-card">
+                <h4>Prometheus</h4>
+                <p>Monitoring tool designed for collecting and storing metrics, ideal for system monitoring and alerting.</p>
+            </div>
+            <div class="skill-card">
+                <h4>Grafana</h4>
+                <p>Open-source platform for monitoring and observability, used to visualize time-series data from Prometheus and other sources.</p>
+            </div>
+            <div class="skill-card">
+                <h4>MySQL</h4>
+                <p>Relational database management system for managing structured data and supporting applications requiring robust data storage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form class="contact-form" onsubmit="return sendMessage()">
+            <input type="text" id="name" placeholder="Your Name" required
