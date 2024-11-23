@@ -1,0 +1,69 @@
+ body {
+        height: 150vh;
+        background:hwb(0 1% 99%)
+        
+        
+    }
+    
+h1{
+    color: hwb(129 96% 1%);
+    text-align: center;
+    text-shadow: 10px;
+    
+}
+i{
+    color: hwb(0 98% 0%);
+}
+h3{
+    color: hwb(60 98% 1%);
+    margin-left: 5px;
+}
+.battery-top{
+    width: 30px;
+    height: 10px;
+    background: black;
+    margin: 0 auto;
+    border: 3px solid silver;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.battery-content{
+    width: 150px;
+    height: 250px;
+    background: black;
+    position: relative;
+    margin: 0 auto;
+    border: 3px solid silver;
+    border-radius: 18px;
+    
+}
+.charge{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 14px;
+    animation: battery 8s linear infinite;
+}
+@keyframes battery {
+    0%{
+        height: 0%;
+        background: red;
+
+    }
+    25%{
+        height: 25%;
+        background: orange;
+    }
+    50%{
+        height: 50%;
+        background: yellow;
+    }
+    75%{
+        height: 75%;
+        background: yellowgreen;
+    }
+    100%{
+        height: 100%;
+        background:green;
+    }
+}
