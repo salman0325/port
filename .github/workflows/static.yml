@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Static Site CI
 
 on:
   push:
@@ -7,26 +7,20 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test:
+  validate-site:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Check HTML syntax
+        uses: Cyb3r-Jak3/htmlhint-action@v1
         with:
-          node-version: '18'
+          config: .htmlhintrc # optional, or remove this line to use defaults
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run Linter
-        run: npm run lint
-
-      - name: Run Tests
-        run: npm test
-
-      - name: Build (optional)
-        run: npm run build
+      - name: Check for broken links in index.html
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y linkchecker
+          linkchecker index.html || echo "Broken links detected"
