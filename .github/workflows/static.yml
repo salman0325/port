@@ -1,1 +1,32 @@
 
+# .github/workflows/deploy.yml
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # or 'master' if you're using that
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'  # This uploads all files (index.html, salman.jpg, etc.)
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
