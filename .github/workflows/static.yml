@@ -1,12 +1,9 @@
-
-# .github/workflows/deploy.yml
-
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # or 'master' if you're using that
+      - main  # Change this if your default branch is different
 
 permissions:
   contents: read
@@ -14,19 +11,25 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages  # ✅ Required for GitHub Pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload static site
+      - name: Upload site files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # This uploads all files (index.html, salman.jpg, etc.)
+          path: '.'  # Upload everything in root (index.html, salman.jpg, etc.)
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
